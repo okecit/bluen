@@ -1,0 +1,395 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>BLUEN — Made to Be Different.</title>
+<meta name="description" content="BLUEN: fashion berbahan denim untuk anak muda yang modern dan ekspresif. Jaket, celana, rok, vest, dan aksesori. Made to Be Different.">
+<link rel="icon" href="img/favicon.png">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=DM+Serif+Display&family=Allura&family=Montserrat:wght@400;500;600;700&display=swap" rel="stylesheet">
+<style>
+  :root{
+    --navy:#172D3B;      /* navy logo */
+    --indigo:#2F4A66;
+    --denim:#4A6A8C;     /* biru bintang & garis logo */
+    --kabut:#E9ECF1;     /* abu kebiruan poster */
+    --kabut-2:#CED3DC;
+    --krem:#F7F4EE;      /* latar logo */
+    --abu:#5E6B7A;
+    --r:4px;
+  }
+  *{box-sizing:border-box;margin:0;padding:0}
+  html{scroll-behavior:smooth}
+  body{font-family:"Montserrat",system-ui,sans-serif;color:var(--navy);background:var(--krem);line-height:1.7;font-size:16px;-webkit-font-smoothing:antialiased}
+  h1,h2,h3{font-family:"DM Serif Display",Georgia,serif;font-weight:400;line-height:1.05;color:var(--navy)}
+  .skrip{font-family:"Allura",cursive;font-weight:400}
+  img{max-width:100%;display:block}
+  a{color:inherit}
+  .wrap{max-width:1200px;margin:0 auto;padding:0 28px}
+  section{padding:110px 0}
+  .label{display:block;font-size:12px;font-weight:600;letter-spacing:.32em;text-transform:uppercase;color:var(--denim);margin-bottom:16px}
+  h2{font-size:clamp(40px,5.2vw,64px);margin-bottom:18px}
+  .lead{color:var(--abu);font-size:17px;max-width:560px}
+  .tengah{text-align:center}.tengah .lead{margin:0 auto}
+  .bintang{display:inline-block;width:14px;height:14px;color:var(--denim)}
+
+  .btn{display:inline-flex;align-items:center;gap:12px;font-size:13px;font-weight:600;letter-spacing:.2em;text-transform:uppercase;text-decoration:none;padding:17px 34px;border-radius:999px;background:var(--navy);color:var(--krem);border:1.5px solid var(--navy);transition:background .25s,color .25s}
+  .btn:hover{background:transparent;color:var(--navy)}
+  .btn.garis{background:transparent;color:var(--navy)}
+  .btn.garis:hover{background:var(--navy);color:var(--krem)}
+  .btn.terang{background:var(--krem);color:var(--navy);border-color:var(--krem)}
+  .btn.terang:hover{background:transparent;color:var(--krem)}
+  .btn svg{width:16px;height:16px}
+
+  /* HEADER */
+  header{position:sticky;top:0;z-index:40;background:rgba(247,244,238,.94);backdrop-filter:blur(10px);border-bottom:1px solid rgba(23,45,59,.1)}
+  .nav{display:grid;grid-template-columns:1fr auto 1fr;align-items:center;height:80px}
+  .menu{display:flex;gap:30px;list-style:none}
+  .menu a{text-decoration:none;font-size:12px;font-weight:600;letter-spacing:.2em;text-transform:uppercase}
+  .menu a:hover{color:var(--denim)}
+  .logo{display:flex;align-items:center;gap:12px;text-decoration:none}
+  .logo img{height:40px;width:auto}
+  .logo span{font-weight:700;font-size:22px;letter-spacing:.32em}
+  .kanan{display:flex;justify-content:flex-end;align-items:center;gap:20px}
+  .kanan .ig{width:22px;height:22px}
+  .kanan .btn{padding:11px 22px;font-size:11px}
+  .burger{display:none;background:none;border:0;cursor:pointer;color:var(--navy)}
+  .burger svg{width:28px;height:28px}
+
+  /* BANNER UTAMA */
+  .banner{background:linear-gradient(180deg,#DCE1E8 0%,var(--kabut) 60%,#D3D9E2 100%);padding:0;position:relative;overflow:hidden}
+  .banner-grid{display:grid;grid-template-columns:1fr 1.05fr;align-items:center;min-height:calc(100vh - 80px);max-height:900px}
+  .banner-isi{position:relative;z-index:2;padding:60px 0}
+  .banner .label{color:var(--denim)}
+  .banner h1{font-size:clamp(60px,8vw,116px);letter-spacing:-.01em}
+  .banner h1 .skrip{display:block;font-size:.95em;color:var(--indigo);line-height:.9;margin-top:6px}
+  .banner p{color:var(--abu);font-size:18px;max-width:440px;margin:26px 0 36px}
+  .banner .aksi{display:flex;gap:14px;flex-wrap:wrap}
+  .banner-foto{position:relative;align-self:stretch}
+  .banner-foto img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;object-position:50% 45%}
+  .banner-foto::before{content:"";position:absolute;inset:0;z-index:1;background:linear-gradient(90deg,#E2E6EC 0%,rgba(226,230,236,0) 28%)}
+  .ciri{position:absolute;z-index:2;font-size:12px;font-weight:600;letter-spacing:.2em;text-transform:uppercase;color:var(--navy);border-left:2px solid var(--navy);padding-left:14px;line-height:2}
+  .ciri.c1{left:6%;bottom:12%}
+  .ciri.c2{right:5%;top:14%;border-left:0;border-right:2px solid var(--navy);padding:0 14px 0 0;text-align:right}
+
+  /* PITA KARAKTER */
+  .pita{background:var(--navy);color:var(--krem);padding:22px 0;overflow:hidden;white-space:nowrap}
+  .pita-isi{display:inline-block;animation:jalan 30s linear infinite}
+  .pita-isi span{font-family:"DM Serif Display";font-size:30px;margin:0 28px;vertical-align:middle}
+  .pita-isi i{display:inline-block;width:16px;height:16px;color:#9FB4CC;vertical-align:middle}
+  .pita-isi i svg{width:100%;height:100%;display:block}
+  @keyframes jalan{to{transform:translateX(-50%)}}
+
+  /* TENTANG */
+  .tentang-grid{display:grid;grid-template-columns:1fr 1fr;gap:90px;align-items:center}
+  .logo-panel{background:#fff;padding:70px 40px;text-align:center;position:relative}
+  .logo-panel img{width:140px;margin:0 auto}
+  .logo-panel .nama{font-weight:700;font-size:44px;letter-spacing:.34em;margin:26px 0 0 .34em}
+  .logo-panel .tag{font-size:12px;letter-spacing:.4em;color:var(--denim);margin-top:8px}
+  .tentang-isi p{color:var(--abu);margin-bottom:16px}
+  .makna{display:grid;grid-template-columns:1fr 1fr;gap:1px;background:var(--kabut-2);margin-top:30px;border:1px solid var(--kabut-2)}
+  .makna div{background:var(--krem);padding:22px 20px}
+  .makna h3{font-size:22px;margin-bottom:4px;display:flex;align-items:center;gap:10px}
+  .makna p{margin:0;font-size:14px}
+
+  /* KOLEKSI */
+  .koleksi{background:#fff}
+  .kol-kepala{display:flex;justify-content:space-between;align-items:flex-end;gap:30px;flex-wrap:wrap;margin-bottom:50px}
+  .kol-grid{display:grid;grid-template-columns:1.3fr 1fr 1fr;grid-template-rows:auto auto;gap:22px}
+  .kol{position:relative;background:var(--kabut);overflow:hidden;text-decoration:none;display:flex;flex-direction:column;justify-content:flex-end;min-height:280px;padding:28px;transition:background .3s}
+  .kol:hover{background:#DDE2E9}
+  .kol.utama{grid-row:span 2;min-height:600px;padding:0;background:#D8DDE5}
+  .kol.utama img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;transition:transform .8s}
+  .kol.utama:hover img{transform:scale(1.04)}
+  .kol.utama .teks{position:relative;z-index:2;padding:30px;background:linear-gradient(transparent,rgba(23,45,59,.82));color:var(--krem)}
+  .kol.utama h3{color:var(--krem)}
+  .kol h3{font-size:34px}
+  .kol .sub{font-size:12px;letter-spacing:.2em;text-transform:uppercase;font-weight:600;margin-top:6px;display:flex;justify-content:space-between;align-items:center}
+  .kol .ikon{position:absolute;top:26px;right:26px;width:96px;height:96px;color:var(--indigo);opacity:.85}
+  .kol .segera{position:absolute;top:26px;left:28px;font-size:10px;letter-spacing:.2em;font-weight:700;text-transform:uppercase;background:var(--krem);padding:5px 10px}
+  .kol .nomor{font-size:12px;color:var(--denim);font-weight:600;letter-spacing:.2em}
+
+  /* PRODUK SOROTAN */
+  .sorotan{background:var(--navy);color:var(--krem);position:relative;overflow:hidden}
+  .sorotan h2{color:var(--krem)}
+  .sorotan .label{color:#9FB4CC}
+  .sor-grid{display:grid;grid-template-columns:1fr 1fr;gap:70px;align-items:center}
+  .sor-foto{display:grid;grid-template-columns:1.4fr 1fr;gap:16px;align-items:end;padding-bottom:40px}
+  .sor-foto img{width:100%;object-fit:cover}
+  .sor-foto img:first-child{aspect-ratio:4/5}
+  .sor-foto img:last-child{aspect-ratio:3/4;margin-bottom:-40px}
+  .sor-isi p{color:#C5D0DD;margin-bottom:22px}
+  .spek{list-style:none;border-top:1px solid rgba(247,244,238,.2);margin:26px 0 34px}
+  .spek li{display:flex;justify-content:space-between;gap:20px;padding:14px 0;border-bottom:1px solid rgba(247,244,238,.2);font-size:14px}
+  .spek li span:first-child{letter-spacing:.16em;text-transform:uppercase;font-size:12px;font-weight:600;color:#9FB4CC}
+
+  /* KEUNGGULAN */
+  .unggul-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:0;margin-top:50px;border-top:1px solid var(--kabut-2);border-bottom:1px solid var(--kabut-2)}
+  .ung{padding:46px 34px;text-align:center}
+  .ung+.ung{border-left:1px solid var(--kabut-2)}
+  .ung svg{width:46px;height:46px;color:var(--indigo);margin:0 auto 20px}
+  .ung h3{font-size:28px;margin-bottom:8px}
+  .ung p{color:var(--abu);font-size:15px;max-width:280px;margin:0 auto}
+
+  /* GALERI */
+  .galeri{background:var(--kabut);padding-bottom:0}
+  .gal{display:grid;grid-template-columns:repeat(4,1fr);gap:6px;margin-top:50px}
+  .gal figure{position:relative;aspect-ratio:4/5;overflow:hidden;background:var(--kabut-2)}
+  .gal img{width:100%;height:100%;object-fit:cover;transition:transform .7s}
+  .gal figure:hover img{transform:scale(1.05)}
+  .gal figcaption{position:absolute;left:0;right:0;bottom:0;padding:40px 18px 16px;background:linear-gradient(transparent,rgba(23,45,59,.75));color:var(--krem);font-size:12px;letter-spacing:.18em;text-transform:uppercase;font-weight:600;opacity:0;transition:opacity .3s}
+  .gal figure:hover figcaption{opacity:1}
+
+  /* AJAKAN */
+  .ajakan{background:var(--indigo);color:var(--krem);text-align:center;padding:100px 0;position:relative;overflow:hidden}
+  .ajakan .skrip{font-size:clamp(64px,9vw,120px);line-height:1;color:#DCE4EE}
+  .ajakan p{color:#C5D0DD;margin:18px auto 34px;max-width:520px}
+  .ajakan .logo-bg{position:absolute;right:-60px;bottom:-60px;width:360px;opacity:.07}
+
+  footer{background:var(--navy);color:#AEBBCB;padding:70px 0 34px}
+  .kaki{display:grid;grid-template-columns:1.4fr 1fr 1fr;gap:40px}
+  .kaki .logo span{color:var(--krem)}
+  .kaki p{margin-top:16px;max-width:340px;font-size:14px}
+  .kaki h4{font-size:12px;letter-spacing:.24em;text-transform:uppercase;color:var(--krem);margin-bottom:16px;font-weight:600}
+  .kaki ul{list-style:none;display:grid;gap:10px;font-size:14px}
+  .kaki a{text-decoration:none;display:inline-flex;gap:10px;align-items:center}
+  .kaki a:hover{color:var(--krem)}
+  .kaki svg{width:18px;height:18px}
+  .bawah{border-top:1px solid rgba(247,244,238,.12);margin-top:50px;padding-top:22px;display:flex;justify-content:space-between;flex-wrap:wrap;gap:12px;font-size:12px;letter-spacing:.06em}
+
+  .muncul{opacity:0;transform:translateY(28px);transition:opacity .9s ease,transform .9s ease}
+  .muncul.tampil{opacity:1;transform:none}
+  @media (prefers-reduced-motion:reduce){.muncul{opacity:1;transform:none}.pita-isi{animation:none}}
+
+  @media (max-width:1000px){
+    .nav{grid-template-columns:auto 1fr auto}
+    .menu{display:none}
+    .menu.buka{display:flex;position:absolute;top:80px;left:0;right:0;flex-direction:column;gap:0;background:var(--krem);padding:10px 0 20px;border-bottom:1px solid rgba(23,45,59,.1)}
+    .menu.buka a{display:block;padding:14px 28px}
+    .burger{display:block;order:-1}
+    .logo{justify-self:center}
+    .kanan .btn{display:none}
+    .banner-grid{grid-template-columns:1fr;min-height:0;max-height:none}
+    .banner-foto{height:520px;order:-1}
+    .banner-foto::before{background:linear-gradient(0deg,#E2E6EC 0%,rgba(226,230,236,0) 30%)}
+    .banner-isi{padding:20px 0 80px}
+    .ciri{display:none}
+    .tentang-grid,.sor-grid{grid-template-columns:1fr;gap:60px}
+    .kol-grid{grid-template-columns:1fr 1fr}
+    .kol.utama{grid-column:span 2;grid-row:auto;min-height:480px}
+    .unggul-grid{grid-template-columns:1fr}
+    .ung+.ung{border-left:0;border-top:1px solid var(--kabut-2)}
+    .gal{grid-template-columns:1fr 1fr}
+    .kaki{grid-template-columns:1fr 1fr}
+    .kaki > div:first-child{grid-column:span 2}
+  }
+  @media (max-width:560px){
+    section{padding:76px 0}
+    .logo span{font-size:18px}
+    .banner-foto{height:420px}
+    .banner .aksi .btn{width:100%;justify-content:center}
+    .kol-grid{grid-template-columns:1fr}
+    .kol.utama{grid-column:auto;min-height:420px}
+    .makna{grid-template-columns:1fr}
+    .sor-foto img:last-child{margin-bottom:0}
+    .kaki{grid-template-columns:1fr}
+    .kaki > div:first-child{grid-column:auto}
+  }
+</style>
+</head>
+<body>
+
+<svg width="0" height="0" style="position:absolute" aria-hidden="true">
+  <symbol id="bintang" viewBox="0 0 24 24"><path fill="currentColor" d="M12 0c.7 6.4 5.6 11.3 12 12-6.4.7-11.3 5.6-12 12-.7-6.4-5.6-11.3-12-12C6.4 11.3 11.3 6.4 12 0z"/></symbol>
+  <symbol id="ig" viewBox="0 0 24 24"><g fill="none" stroke="currentColor" stroke-width="1.6"><rect x="3" y="3" width="18" height="18" rx="5"/><circle cx="12" cy="12" r="4"/><circle cx="17.5" cy="6.5" r=".8" fill="currentColor"/></g></symbol>
+  <symbol id="panah" viewBox="0 0 24 24"><path d="M5 12h14M13 6l6 6-6 6" fill="none" stroke="currentColor" stroke-width="2"/></symbol>
+</svg>
+
+<header>
+  <nav class="wrap nav">
+    <ul class="menu" id="menu">
+      <li><a href="#tentang">Tentang</a></li>
+      <li><a href="#koleksi">Koleksi</a></li>
+      <li><a href="#sorotan">Sorotan</a></li>
+      <li><a href="#galeri">Galeri</a></li>
+    </ul>
+    <button class="burger" aria-label="Buka menu" onclick="document.getElementById('menu').classList.toggle('buka')"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6"><path d="M3 7h18M3 12h18M3 17h18"/></svg></button>
+    <a href="#beranda" class="logo"><img src="img/logo-b.png" alt="Logo BLUEN"><span>BLUEN</span></a>
+    <div class="kanan">
+      <a href="https://www.instagram.com/bluen.id" target="_blank" rel="noopener" aria-label="Instagram BLUEN"><svg class="ig"><use href="#ig"/></svg></a>
+      <a href="#kontak" class="btn">Shop Now</a>
+    </div>
+  </nav>
+</header>
+
+<!-- 1. BANNER UTAMA -->
+<section class="banner" id="beranda">
+  <div class="wrap banner-grid">
+    <div class="banner-isi muncul">
+      <span class="label">BLUEN Fashion Collection</span>
+      <h1>Made to Be<span class="skrip">Different.</span></h1>
+      <p>Fashion berbahan denim untuk kamu yang modern dan ekspresif. Tampil percaya diri dengan gayamu sendiri, tanpa harus selalu mengikuti tren.</p>
+      <div class="aksi">
+        <a href="#koleksi" class="btn">Lihat koleksi <svg><use href="#panah"/></svg></a>
+        <a href="#tentang" class="btn garis">Kenali BLUEN</a>
+      </div>
+    </div>
+    <div class="banner-foto muncul">
+      <img src="img/jaket.jpg" alt="Jaket denim abu BLUEN dengan aksen kancing simpul, melayang di atas podium dengan pita kain biru navy">
+    </div>
+  </div>
+</section>
+
+<div class="pita" aria-hidden="true"><div class="pita-isi">
+  <span>Modern</span><i><svg><use href="#bintang"/></svg></i><span>Bold</span><i><svg><use href="#bintang"/></svg></i><span>Minimalis</span><i><svg><use href="#bintang"/></svg></i><span>Timeless</span><i><svg><use href="#bintang"/></svg></i><span>Percaya diri</span><i><svg><use href="#bintang"/></svg></i>
+  <span>Modern</span><i><svg><use href="#bintang"/></svg></i><span>Bold</span><i><svg><use href="#bintang"/></svg></i><span>Minimalis</span><i><svg><use href="#bintang"/></svg></i><span>Timeless</span><i><svg><use href="#bintang"/></svg></i><span>Percaya diri</span><i><svg><use href="#bintang"/></svg></i>
+</div></div>
+
+<!-- 2. TENTANG MEREK -->
+<section id="tentang">
+  <div class="wrap tentang-grid">
+    <div class="logo-panel muncul">
+      <img src="img/logo-b.png" alt="Simbol BLUEN: huruf B, bintang, dan garis lengkung">
+      <div class="nama">BLUEN</div>
+      <div class="tag">MADE TO BE DIFFERENT.</div>
+    </div>
+    <div class="tentang-isi muncul">
+      <span class="label">Tentang BLUEN</span>
+      <h2>Dari warna ikonik denim</h2>
+      <p>BLUEN terinspirasi dari kata <i>blue</i>, warna ikonik denim. Nama ini merepresentasikan identitas fashion yang modern, mudah diingat, dan fleksibel untuk berbagai produk berbahan denim.</p>
+      <p>BLUEN tidak hanya berfokus pada satu jenis pakaian, tetapi pada gaya dan karakter pemakainya. <strong>Made to Be Different</strong>: diciptakan untuk menjadi berbeda.</p>
+      <div class="makna">
+        <div><h3>Huruf B</h3><p>Identitas utama dan karakter merek yang kuat.</p></div>
+        <div><h3>Bintang <svg class="bintang"><use href="#bintang"/></svg></h3><p>Keberanian untuk bersinar dan menjadi diri sendiri.</p></div>
+        <div><h3>Garis lengkung</h3><p>Perjalanan, pertumbuhan, dan kebebasan berekspresi.</p></div>
+        <div><h3>Indigo &amp; navy</h3><p>Terinspirasi denim: kokoh, tenang, dan timeless.</p></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- 3. PRODUK: KOLEKSI -->
+<section class="koleksi" id="koleksi">
+  <div class="wrap">
+    <div class="kol-kepala muncul">
+      <div><span class="label">Koleksi</span><h2>Denim untuk setiap gaya</h2></div>
+      <p class="lead">Lima kategori produk berbahan denim untuk anak muda dan dewasa muda yang suka tampil modern dan ekspresif.</p>
+    </div>
+    <div class="kol-grid">
+      <a class="kol utama muncul" href="#sorotan">
+        <img src="img/jaket-dekat.jpg" alt="Jaket denim abu BLUEN">
+        <div class="teks"><span class="nomor" style="color:#C5D0DD">01</span><h3>Jaket</h3><div class="sub"><span>Koleksi unggulan</span><svg style="width:18px;height:18px"><use href="#panah"/></svg></div></div>
+      </a>
+      <div class="kol muncul"><span class="segera">Segera hadir</span>
+        <svg class="ikon" viewBox="0 0 64 64" fill="none" stroke="currentColor" stroke-width="2"><path d="M20 8h24l4 50H36l-4-32-4 32H16z"/><path d="M20 14h24M32 8v6"/></svg>
+        <span class="nomor">02</span><h3>Celana</h3><div class="sub"><span>Straight · wide leg</span></div></div>
+      <div class="kol muncul"><span class="segera">Segera hadir</span>
+        <svg class="ikon" viewBox="0 0 64 64" fill="none" stroke="currentColor" stroke-width="2"><path d="M22 10h20l10 44H12z"/><path d="M22 16h20M32 10v44"/></svg>
+        <span class="nomor">03</span><h3>Rok</h3><div class="sub"><span>Mini · midi</span></div></div>
+      <div class="kol muncul"><span class="segera">Segera hadir</span>
+        <svg class="ikon" viewBox="0 0 64 64" fill="none" stroke="currentColor" stroke-width="2"><path d="M24 8c0 6 4 10 8 10s8-4 8-10l10 6-2 42H16l-2-42z"/><path d="M32 18v38"/><circle cx="36" cy="30" r="1.5" fill="currentColor"/><circle cx="36" cy="40" r="1.5" fill="currentColor"/></svg>
+        <span class="nomor">04</span><h3>Vest</h3><div class="sub"><span>Layering</span></div></div>
+      <div class="kol muncul"><span class="segera">Segera hadir</span>
+        <svg class="ikon" viewBox="0 0 64 64" fill="none" stroke="currentColor" stroke-width="2"><path d="M14 26h36l-3 30H17z"/><path d="M24 26c0-10 16-10 16 0"/></svg>
+        <span class="nomor">05</span><h3>Aksesori</h3><div class="sub"><span>Tas · topi · scarf</span></div></div>
+    </div>
+  </div>
+</section>
+
+<!-- SOROTAN PRODUK -->
+<section class="sorotan" id="sorotan">
+  <div class="wrap sor-grid">
+    <div class="sor-foto muncul">
+      <img src="img/jaket-dekat.jpg" alt="Jaket denim abu BLUEN tampak depan">
+      <img src="img/detail-kancing.jpg" alt="Detail kancing simpul pada jaket">
+    </div>
+    <div class="sor-isi muncul">
+      <span class="label">Sorotan koleksi</span>
+      <h2>The Grey Denim Jacket</h2>
+      <p>Jaket denim abu dengan potongan pas badan, kerah berdiri, dan aksen kancing simpul berbaris di bagian depan. Detail yang berani dalam siluet yang tetap minimalis, mudah dipadukan untuk gaya sehari-hari maupun acara.</p>
+      <ul class="spek">
+        <li><span>Bahan</span><span>Denim</span></li>
+        <li><span>Warna</span><span>Abu washed</span></li>
+        <li><span>Detail</span><span>Kancing simpul, kerah berdiri</span></li>
+        <li><span>Gaya</span><span>Modern · bold · timeless</span></li>
+      </ul>
+      <a href="#kontak" class="btn terang">Tanya ukuran &amp; harga <svg><use href="#panah"/></svg></a>
+    </div>
+  </div>
+</section>
+
+<!-- KEUNGGULAN -->
+<section>
+  <div class="wrap">
+    <div class="tengah muncul"><span class="label">Kenapa BLUEN</span><h2>Dibuat untuk bertahan</h2></div>
+    <div class="unggul-grid">
+      <div class="ung muncul"><svg viewBox="0 0 48 48" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M12 8h24l8 12-20 22L4 20z"/><path d="M4 20h40M18 8l-4 12 10 22 10-22-4-12"/></svg><h3>Premium Quality</h3><p>Bahan denim pilihan yang nyaman dipakai dan awet.</p></div>
+      <div class="ung muncul"><svg viewBox="0 0 48 48" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M24 12a4 4 0 1 1 4 4c-2 0-4 1-4 3v2"/><path d="M24 21L5 36h38z"/></svg><h3>Modern Design</h3><p>Siluet bersih dengan detail yang membuatmu menonjol.</p></div>
+      <div class="ung muncul"><svg viewBox="0 0 48 48" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M24 4l5.9 12.7 13.6 1.6-10 9.4 2.6 13.6L24 34.6l-12.1 6.7 2.6-13.6-10-9.4 13.6-1.6z"/></svg><h3>Timeless Style</h3><p>Tetap relevan dari musim ke musim, bukan sekadar ikut tren.</p></div>
+    </div>
+  </div>
+</section>
+
+<!-- 4. GALERI -->
+<section class="galeri" id="galeri">
+  <div class="wrap tengah muncul">
+    <span class="label">@bluen.id</span>
+    <h2>Stand out in your own way</h2>
+    <p class="lead">Cuplikan konten dari media sosial BLUEN.</p>
+  </div>
+  <div class="gal">
+    <figure><img src="img/poster.jpg" alt="Poster kampanye BLUEN" style="object-position:50% 40%"><figcaption>Poster kampanye</figcaption></figure>
+    <figure><img src="img/konten1.jpg" alt="Konten tagline Made to Be Different"><figcaption>Made to Be Different</figcaption></figure>
+    <figure><img src="img/detail-kancing.jpg" alt="Detail kancing jaket BLUEN"><figcaption>Detail yang bicara</figcaption></figure>
+    <figure><img src="img/konten2.jpg" alt="Konten karakter BLUEN"><figcaption>Karakter BLUEN</figcaption></figure>
+  </div>
+</section>
+
+<!-- AJAKAN -->
+<section class="ajakan">
+  <img class="logo-bg" src="img/logo-b-putih.png" alt="">
+  <div class="wrap">
+    <span class="label" style="color:#C5D0DD">Siap tampil beda?</span>
+    <div class="skrip">Made to Be Different.</div>
+    <p>Temukan koleksi terbaru dan tanya ukuran langsung lewat Instagram BLUEN.</p>
+    <a href="https://www.instagram.com/bluen.id" target="_blank" rel="noopener" class="btn terang">Shop Now <svg><use href="#panah"/></svg></a>
+  </div>
+</section>
+
+<!-- 5. KONTAK -->
+<footer id="kontak">
+  <div class="wrap">
+    <div class="kaki">
+      <div>
+        <a href="#beranda" class="logo"><img src="img/logo-b-putih.png" alt="Logo BLUEN"><span>BLUEN</span></a>
+        <p>Fashion berbahan denim: jaket, celana, rok, vest, dan aksesori. Modern, bold, minimalis, timeless.</p>
+      </div>
+      <div>
+        <h4>Hubungi</h4>
+        <ul><li><a href="https://www.instagram.com/bluen.id" target="_blank" rel="noopener"><svg><use href="#ig"/></svg>Instagram @bluen.id</a></li></ul>
+      </div>
+      <div>
+        <h4>Jelajahi</h4>
+        <ul><li><a href="#tentang">Tentang</a></li><li><a href="#koleksi">Koleksi</a></li><li><a href="#sorotan">Sorotan</a></li><li><a href="#galeri">Galeri</a></li></ul>
+      </div>
+    </div>
+    <div class="bawah">
+      <span>© <span id="tahun"></span> BLUEN Fashion Collection · Made to Be Different.</span>
+      <span>Proyek tugas kuliah — Strategy Brand Communication, Ilmu Komunikasi UNDIRA</span>
+    </div>
+  </div>
+</footer>
+
+<script>
+  document.getElementById('tahun').textContent = new Date().getFullYear();
+  document.querySelectorAll('.menu a').forEach(a => a.addEventListener('click', () =>
+    document.getElementById('menu').classList.remove('buka')));
+  const io = new IntersectionObserver(es => es.forEach(e => {
+    if (e.isIntersecting){ e.target.classList.add('tampil'); io.unobserve(e.target); }
+  }), {threshold:.1});
+  document.querySelectorAll('.muncul').forEach(el => io.observe(el));
+</script>
+</body>
+</html>
